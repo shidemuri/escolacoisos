@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miau</title>
+    <link rel="icon" href="https://host.paderos-neko.store/raw/favicon_WxkTOVhhWIIMQLM.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif ;
+        }
+        main {
+            background-color: rgb(238, 238, 238);
+            box-shadow: 2px 3px 10px gray;
+            border-radius: 7px;
+        }
+        header {
+            display:flex;
+            height:50px;
+            align-items: center;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.288);
+            z-index: 1;
+        }
+        #logo {
+            border-radius: 7px;
+            width:10%;
+            text-align: center;
+            margin:8px
+        }
+        #botoesdecima{
+            margin-left: 16px;
+            width:85%;
+        }
+        .botaolegal {
+            padding-right: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .humor {
+            transition: font-size 1s;
+        }
+        img.humor{
+            transition:width 2s
+        }
+        .humor:hover {
+            text-decoration: underline;
+            font-size: 128px;
+            width:1000%;
+        }
+        #botoesdireita {
+            justify-content: flex-end;
+            text-align: center;
+            align-items: center;
+            display:flex;
+        }
+        .botaodireita {
+            width:5%;
+        }
+        /* body {
+            background: url('https://th.bing.com/th?id=OVP.067a6XmZ-CGQnopS1-YI9QEsDh&w=304&h=342&c=7&rs=1&qlt=90&o=6&pid=1.7');
+            background-repeat: no-repeat;
+            background-size: 100% 1000px;
+            animation: porra 1s ease-in-out infinite
+        }
+        @keyframes porra {
+            0% {
+                background-size:100% 200px;
+            }
+            50% {
+                background-size: 100% 1000px;
+            }
+            100% {
+                background-size: 100% 200px;
+            }
+        }  */
+        content {
+            display:flexbox;
+            background-color: rgb(238, 238, 238);
+            margin-left:5px;
+            margin-right:5px;
+            padding-top: 0;
+        }
+        #pessoa {
+            padding-top: 0;
+            width:100%;
+        }
+        .texxxxto {
+            padding-left: 35px;
+            padding-right: 35px;
+            padding-bottom: 20px;
+        }
+        .transformacoes {
+            margin-bottom: 35px;
+        }
+        .um {
+            background-color: rgb(11, 85, 182);
+            color:white;
+            font-size: 16px;
+            text-decoration: none;
+            padding:10px;
+            margin-right: 30px;
+        }
+        .seis {
+            text-decoration: none;
+            color: rgb(11, 85, 182);
+        }
+        
+        .coisodoseis {
+            margin-left: 5px;
+            transition: margin-left 0.5s;
+        }
+        .coisodoseis:hover{
+            margin-left: 10px;
+        }
+        .ibagem {
+            padding-bottom: 10px;
+            border-radius: 0 0 7px 7px;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.288);
+        }
+        
+        #escolher {
+            display:flex;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        .escolhendo {
+            display: flexbox;
+            justify-self: center;
+            padding: 10px;
+        }
+        .escolhendo2 {
+            display: flex;
+            justify-content: center;
+        }
+        .escolhendotexto{
+            color: rgb(11, 85, 182);
+            font-weight: bold;
+        }
+        .noticiaimg {
+            margin-left:0;
+        }
+        .noticias {
+            display:flex;
+            flex-wrap: wrap;
+        }
+        .noticia {
+            width: 450px;
+            margin:10px;
+            padding-bottom: 30px;
+        }
+        .noticiabody {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        #sociais {
+            margin-left: 24px;
+            padding-right: 12px;
+            display:flex;
+            align-items: center;
+        }
+        /* .social {
+            padding-right: 5px;
+        } */
+        #voltarcoiso {
+            display:flex;
+        }
+        #voltar {
+            margin-left:auto;
+            margin-right: 16px;
+            background-color: rgb(180, 180, 180);
+            padding:12px;
+            color:black;
+            text-decoration: none;
+        }
+
+        #peum {
+            display:flex;
+            margin-left: 12px;
+            margin-right: 12px;
+            margin-top:16px;
+        }
+        .peumtitle {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .peumcoiso {
+            display:flexbox;
+            flex-wrap: wrap;
+            width:200px;
+            /* border: 1px solid black; */
+            margin-right:16px;
+        }
+        .peumlink {
+            color:rgb(22, 22, 22);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .peumlink:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header id="topo">
+            <a href="https://microsoft.com" id="logo">
+                <img width="100%" class='humor'src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" alt="">
+            </a>
+            <div id="botoesdecima">
+                <a class ='botaolegal humor' href="https://www.microsoft.com/microsoft-365"> microsoft 365</a>
+                <a class ='botaolegal humor' href="https://www.microsoft.com/microsoft-teams/group-chat-software">teams</a>
+                <a class ='botaolegal humor' href="https://www.microsoft.com/pt-br/windows/">windows</a>
+                <a class ='botaolegal humor' href="https://www.xbox.com/">xbox</a>
+                <a class ='botaolegal humor' href="https://support.microsoft.com/pt-br">suporte</a>
+            </div>
+            <div id="botoesdireita">
+                <a class='botaolegal humor'href="https://utau2008.xrea.jp">toda a microsoft</a>
+                <a class='botaolegal humor' href="https://www.microsoft.com/pt-br/store/cart">
+                    🔎
+                </a>
+                <a aria-label="👁️‍🗨️" class='botaolegal humor' href="https://kasaneteto.jp">
+                    🛒
+                </a>
+                
+            </div>
+        </header>
+        <content>
+            <div class="ibagem">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Slim-Multi-Canvas-M365-Anthem-Attract-Image-Create:VP3-1083x600" alt="" id="pessoa">
+                <div class="texxxxto">
+                    <h2>
+                        Microsoft 365
+                    </h2>
+                    <p class="transformacoes">
+                        Transforme suas ideias em realidade, mantenha a segurança online e offline e concentre-se no que realmente importa com os aplicativos do Microsoft 365.
+                    </p>
+                    <div class="botoesfodasticos">
+                        <a class='um' href="https://www.microsoft.com/pt-br/microsoft-365/p/microsoft-365-personal/cfq7ttc0k5bf?icid=mscom_marcom_H1a_M365Personal">
+                            Para 1 pessoa
+                        </a>
+                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ">
+                            <span>Para até 6 pessoas</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="escolher">
+                <div class="escolhendo">
+                    <div class="escolhendo2"> 
+                        <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Quick-Link-Icon-80x80-Microsoft-365?wid=40&hei=40" alt="" class="sss">
+                    </div>
+                    <p>
+                        <a class="escolhendotexto" href="https://www.microsoft.com/pt-br/microsoft-365/compare-all-microsoft-365-products?icid=MSCOM_QL_M365">Escolha seu Microsoft 365</a>
+                    </p>
+                </div>
+                <div class="escolhendo">
+                    <div class="escolhendo2"> 
+                        <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/xbox-blk-logo-link-list-120x120?wid=40&hei=40" alt="" class="sss">
+                    </div>
+                    <p>
+                        <a class="escolhendotexto" href="https://www.microsoft.com/pt-br/store/b/xbox?icid=MSCOM_QL_Xbox">Comprar o Xbox</a>
+                    </p>
+                </div>
+                <div class="escolhendo">
+                    <div class="escolhendo2"> 
+                        <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Quick-Link-Icon-80x80-Microsoft-365?wid=40&hei=40" alt="" class="sss">
+                    </div>
+                    <p>
+                        <a class="escolhendotexto" href="https://www.microsoft.com/pt-br/windows/get-windows-11?icid=MSCOM_QL_Windows">Adquira o Windows 11</a>
+                    </p>
+                </div>
+                
+                
+            </div>
+            
+            <div class="noticias">
+                <div class="noticia">
+                    <img class="noticiaimg" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSX-CP-Xbox-Series-X?wid=517&hei=293&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Xbox Series X</h2>
+                        <p>O Xbox está ainda mais rápido e poderoso.</p>
+                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
+                            <span>Comprar Xbox Series X</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div id="bing" class="noticia">
+                    <img class="noticiaimg"src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Bing-AI-No-Text?wid=517&hei=293&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Apresentando o novo Bing</h2>
+                        <p>Faça perguntas reais. Converse e crie. Receba respostas melhores de seu copiloto com tecnologia de IA para a web.</p>
+                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
+                            <span>Saiba mais sobre o novo Bing</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="noticia">
+                    <img class="noticiaimg" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-MSFT-CP-Edge?wid=517&hei=293&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Microsoft Edge</h2>
+                        <p>Desempenho excepcional com mais privacidade, mais velocidade e mais qualidade durante a navegação.</p>
+                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
+                            <span>Baixe agora</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="noticia">
+                    <img class="noticiaimg"src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-Soft-CP-OneDriveCampaignRefresh-2?wid=517&hei=293&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Microsoft OneDrive</h2>
+                        <p>Salve seus arquivos e fotos no OneDrive e acesse-os em qualquer dispositivo, em qualquer lugar</p>
+                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
+                            <span>Saiba mais</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ibagem">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Hero-Windows11-GlobalLaunch:VP3-1083x600" alt="" id="pessoa">
+                <div class="texxxxto">
+                    <h2>
+                        Projetado para a vida hoje e amanhã
+                    </h2>
+                    <p class="transformacoes">
+                        A próxima geração de jogos. Seus objetivos. Amigos e família. O Windows 11 foi feito para aproximá-lo de tudo o que você mais gosta.
+                    </p>
+                    <div class="botoesfodasticos">
+                        <a class='um' href="https://www.microsoft.com/pt-br/microsoft-365/p/microsoft-365-personal/cfq7ttc0k5bf?icid=mscom_marcom_H1a_M365Personal">
+                            Veja se o seu PC está pronto
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="noticias">
+                <div class="noticia">
+                    <img class="noticiaimg" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-365-For-Business-Woman-Teams-Call?wid=406&hei=230&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Experimente grátis o Microsoft 365</h2>
+                        <p>Tenha o Microsoft Teams, armazenamento seguro na nuvem e aplicativos premium em todos os dispositivos com uma avaliação gratuita de 1 mês do Microsoft 365 Business Standard.</p>
+                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
+                            <span>Teste grátis, sem compromisso</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div id="bing" class="noticia">
+                    <img class="noticiaimg"src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Windows-11-Business?wid=406&hei=230&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Windows 11 para empresas</h2>
+                        <p>Projetado para o trabalho híbrido. Eficiente para os funcionários. Consistente para a TI. Seguro para todos.</p>
+                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
+                            <span>Saiba mais</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="noticia">
+                    <img class="noticiaimg" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/JIC-DPS-CP01?wid=406&hei=230&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Bem vindo ao PC na Nuvem do Windows 365</h2>
+                        <p>Transmita com segurança sua experiência do Windows da nuvem da Microsoft para qualquer dispositivo.</p>
+                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
+                            <span>Adquira hoje.</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="noticia">
+                    <img class="noticiaimg"src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Microsoft-Teams-Commercial?wid=406&hei=230&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Baixe gratuitamente o Microsoft Teams</h2>
+                        <p>Reuniões online, chat e armazenamento na nuvem compartilhado, tudo em um só lugar.</p>
+                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
+                            <span>Inscreva-se gratuitamente</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sociais">
+                <p>Siga Microsoft</p>
+                <a class="social" href="https://www.youtube.com/watch?v=pskoRCJytR8&pp=ygUHa29yb25iYQ%3D%3D">
+                    <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Facebook%202x?scl=1" alt="facebook" width="40">
+                </a>
+                <a class="social" href="https://www.youtube.com/watch?v=G4R93lxdLrs&pp=ygUGeDBvMHhf">
+                    <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/icon-MSCOM-X-64x64?scl=1" alt="x" width="40">
+                </a>
+
+                <a class="social" href="https://www.youtube.com/watch?v=p-SeomFu39c&pp=ygUGeDBvMHhf">
+                    <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/YouTube%202x?scl=1" alt="yt" width="40">
+                </a>
+
+                <a class="social" href="https://www.youtube.com/watch?v=60Fu5VJ2S1E&pp=ygUEeGFjaw%3D%3D">
+                    <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Instagram%202x?scl=1" alt="yt" width="40">
+                </a>
+            </div>
+
+            <div id="voltarcoiso">
+                <a id="voltar" href="#topo">Voltar ao início</a>
+            </div>
+
+            <div id="peum">
+                <div class="peumcoiso">
+                    <p class="peumtitle">Novidades</p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/microsoft-365">Microsoft 365</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/windows/windows-11-apps">Aplicativos do Windows 11</a>
+                    </p>
+                </div>
+                <div class="peumcoiso">
+                    <p class="peumtitle">Microsoft Store</p>
+                    <p>
+                        <a class="peumlink" href="https://account.microsoft.com/">Perfil da conta</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/download">Centro de download</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://go.microsoft.com/fwlink/?linkid=2139749">Suporte da Microsoft Store</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://go.microsoft.com/fwlink/p/?LinkID=824764&clcid=0x416">Devoluções</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://account.microsoft.com/orders">Acompanhamento de pedidos</a>
+                    </p>
+                </div>
+                <div class="peumcoiso">
+                    <p class="peumtitle">Educação</p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/education">Microsoft Education</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/download">Dispositivos para educação</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://go.microsoft.com/fwlink/?linkid=2139749">Microsoft Teams para Educação</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://go.microsoft.com/fwlink/p/?LinkID=824764&clcid=0x416">deu preguiça de colocar todos os links ent vai tudo repetido</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://account.microsoft.com/orders">Microsoft 365 Education</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://account.microsoft.com/orders">Office Education</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://account.microsoft.com/orders">Treinamento e desenvolvimento de educadores</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://account.microsoft.com/orders">Ofertas para estudantes e pais</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://account.microsoft.com/orders">Azure para estudantes</a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="pedois">
+
+            </div>
+
+        </content>
+    </main>
+</body>
+</html>
