@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miau</title>
-    <link rel="icon" href="https://host.paderos-neko.store/raw/favicon_WxkTOVhhWIIMQLM.ico">
+    <title>Microsoft - Nuvem, aplicativos e jogos</title>
+    <link rel="icon" href="https://kasaneteto.jp/favicon.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     </style>
@@ -13,8 +13,9 @@
         * {
             font-family: 'Roboto', sans-serif ;
         }
+        
         main {
-            background-color: rgb(238, 238, 238);
+            background-color: rgb(252, 252, 252);
             box-shadow: 2px 3px 10px gray;
             border-radius: 7px;
         }
@@ -27,20 +28,25 @@
         }
         #logo {
             border-radius: 7px;
-            width:10%;
+            width:108px;
             text-align: center;
-            margin:8px
+            margin:8px;
+            padding-left:5px;
         }
         #botoesdecima{
-            margin-left: 16px;
+            margin-left: 10px;
             width:85%;
         }
         .botaolegal {
             padding-right: 10px;
             text-decoration: none;
             color: black;
+            font-size:14px
         }
-        .humor {
+        .botaolegal:hover {
+            text-decoration: underline;
+        }
+        /* .humor {
             transition: font-size 1s;
         }
         img.humor{
@@ -50,7 +56,7 @@
             text-decoration: underline;
             font-size: 128px;
             width:1000%;
-        }
+        } */
         #botoesdireita {
             justify-content: flex-end;
             text-align: center;
@@ -58,15 +64,15 @@
             display:flex;
         }
         .botaodireita {
-            width:5%;
+            width:35%;
         }
         /* body {
             background: url('https://th.bing.com/th?id=OVP.067a6XmZ-CGQnopS1-YI9QEsDh&w=304&h=342&c=7&rs=1&qlt=90&o=6&pid=1.7');
             background-repeat: no-repeat;
             background-size: 100% 1000px;
-            animation: porra 1s ease-in-out infinite
+            animation: asd 1s ease-in-out infinite
         }
-        @keyframes porra {
+        @keyframes asd {
             0% {
                 background-size:100% 200px;
             }
@@ -78,14 +84,9 @@
             }
         }  */
         content {
-            display:flexbox;
             background-color: rgb(238, 238, 238);
-            margin-left:5px;
-            margin-right:5px;
-            padding-top: 0;
         }
         #pessoa {
-            padding-top: 0;
             width:100%;
         }
         .texxxxto {
@@ -110,11 +111,11 @@
         }
         
         .coisodoseis {
-            margin-left: 5px;
-            transition: margin-left 0.5s;
+            padding-right: 5px;
+            transition: padding-right 0.5s;
         }
         .coisodoseis:hover{
-            margin-left: 10px;
+            padding-right: 10px;
         }
         .ibagem {
             padding-bottom: 10px;
@@ -128,7 +129,6 @@
             justify-content: center;
         }
         .escolhendo {
-            display: flexbox;
             justify-self: center;
             padding: 10px;
         }
@@ -138,10 +138,7 @@
         }
         .escolhendotexto{
             color: rgb(11, 85, 182);
-            font-weight: bold;
-        }
-        .noticiaimg {
-            margin-left:0;
+            font-weight:bold;
         }
         .noticias {
             display:flex;
@@ -162,9 +159,6 @@
             display:flex;
             align-items: center;
         }
-        /* .social {
-            padding-right: 5px;
-        } */
         #voltarcoiso {
             display:flex;
         }
@@ -175,20 +169,28 @@
             padding:12px;
             color:black;
             text-decoration: none;
+            border-radius: 2px;
+        }
+        #voltar:hover {
+            background-color: white;
+            box-shadow: 1px 1px 5px rgb(180, 180, 180);
         }
 
         #peum {
             display:flex;
-            margin-left: 12px;
-            margin-right: 12px;
+            padding-left: 40px;
+            padding-right: 40px;
+            flex-wrap: wrap;
             margin-top:16px;
+            padding-bottom:16px;
+            background-color: rgb(234, 234, 234);
+            justify-content: space-evenly;
         }
         .peumtitle {
             font-size: 20px;
             font-weight: bold;
         }
         .peumcoiso {
-            display:flexbox;
             flex-wrap: wrap;
             width:200px;
             /* border: 1px solid black; */
@@ -202,7 +204,37 @@
         .peumlink:hover {
             text-decoration: underline;
         }
-        
+
+        #pedois {
+            display:flex;
+            justify-content: flex-end;
+            background-color: rgb(234, 234, 234);
+            padding-bottom:16px;
+            border-radius: 0 0 7px 7px;
+        }
+        .pedoiscoiso {
+            font-size:12px;
+            padding-right:18px;
+        }
+
+        #controles {
+            display:flex;
+            font-size:30px;
+            justify-content: center;
+
+        }
+        .controle {
+
+        }
+        #pause {
+            text-decoration: none;
+        }
+        #esq {
+            font-family: monospace;
+            font-size:35px;
+            color:black;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -212,15 +244,15 @@
                 <img width="100%" class='humor'src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" alt="">
             </a>
             <div id="botoesdecima">
-                <a class ='botaolegal humor' href="https://www.microsoft.com/microsoft-365"> microsoft 365</a>
-                <a class ='botaolegal humor' href="https://www.microsoft.com/microsoft-teams/group-chat-software">teams</a>
-                <a class ='botaolegal humor' href="https://www.microsoft.com/pt-br/windows/">windows</a>
-                <a class ='botaolegal humor' href="https://www.xbox.com/">xbox</a>
-                <a class ='botaolegal humor' href="https://support.microsoft.com/pt-br">suporte</a>
+                <a class ='botaolegal humor' href="https://www.microsoft.com/microsoft-365"> Microsoft 365</a>
+                <a class ='botaolegal humor' href="https://www.microsoft.com/microsoft-teams/group-chat-software">Teams</a>
+                <a class ='botaolegal humor' href="https://www.microsoft.com/pt-br/windows/">Windows</a>
+                <a class ='botaolegal humor' href="https://www.xbox.com/">Xbox</a>
+                <a class ='botaolegal humor' href="https://support.microsoft.com/pt-br">Suporte</a>
             </div>
             <div id="botoesdireita">
-                <a class='botaolegal humor'href="https://utau2008.xrea.jp">toda a microsoft</a>
-                <a class='botaolegal humor' href="https://www.microsoft.com/pt-br/store/cart">
+                <a class='botaolegal' style='width:122px;'href="http://utau2008.xrea.jp">Toda a microsoft</a>
+                <a class='botaolegal' href="https://www.microsoft.com/pt-br/store/cart">
                     🔎
                 </a>
                 <a aria-label="👁️‍🗨️" class='botaolegal humor' href="https://kasaneteto.jp">
@@ -244,13 +276,19 @@
                             Para 1 pessoa
                         </a>
                         <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ">
-                            <span>Para até 6 pessoas</span>
+                            <span class="coisodoseis">Para até 6 pessoas</span>
                             <span class="coisodoseis">
                                 >
                             </span>
                         </a>
                     </div>
                 </div>
+            </div>
+
+            <div id="controles">
+                <a href="#" id="pause">⏸️</a>
+                <div><a href="#" id="esq"><</a></div>
+                
             </div>
             
             <div id="escolher">
@@ -288,8 +326,8 @@
                     <div class="noticiabody">
                         <h2>Xbox Series X</h2>
                         <p>O Xbox está ainda mais rápido e poderoso.</p>
-                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
-                            <span>Comprar Xbox Series X</span>
+                        <a class='seis' href="https://www.xbox.com/pt-br/consoles/xbox-series-x?icid=mscom_marcom_CPH1a_XboxSeriesX" style="font-weight:bold;">
+                            <span class="coisodoseis">Comprar Xbox Series X</span>
                             <span class="coisodoseis">
                                 >
                             </span>
@@ -302,8 +340,8 @@
                     <div class="noticiabody">
                         <h2>Apresentando o novo Bing</h2>
                         <p>Faça perguntas reais. Converse e crie. Receba respostas melhores de seu copiloto com tecnologia de IA para a web.</p>
-                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
-                            <span>Saiba mais sobre o novo Bing</span>
+                        <a class='seis' href="https://www.bing.com/new?icid=mscom_marcom_CPH2a_BingAI" style="font-weight:bold;">
+                            <span class="coisodoseis">Saiba mais sobre o novo Bing</span>
                             <span class="coisodoseis">
                                 >
                             </span>
@@ -316,8 +354,8 @@
                     <div class="noticiabody">
                         <h2>Microsoft Edge</h2>
                         <p>Desempenho excepcional com mais privacidade, mais velocidade e mais qualidade durante a navegação.</p>
-                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
-                            <span>Baixe agora</span>
+                        <a class='seis' href="https://www.microsoft.com/pt-br/edge?form=MI13F3&OCID=MI13F3" style="font-weight:bold;">
+                            <span class="coisodoseis">Baixe agora</span>
                             <span class="coisodoseis">
                                 >
                             </span>
@@ -330,8 +368,8 @@
                     <div class="noticiabody">
                         <h2>Microsoft OneDrive</h2>
                         <p>Salve seus arquivos e fotos no OneDrive e acesse-os em qualquer dispositivo, em qualquer lugar</p>
-                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
-                            <span>Saiba mais</span>
+                        <a class='seis' href="https://www.microsoft.com/pt-br/microsoft-365/onedrive/online-cloud-storage?icid=mscom_marcom_CPH4a_OneDrive" style="font-weight:bold;">
+                            <span class="coisodoseis">Saiba mais</span>
                             <span class="coisodoseis">
                                 >
                             </span>
@@ -358,13 +396,42 @@
             </div>
 
             <div class="noticias">
+
+                <div class="noticia">
+                    <img class="noticiaimg"src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Microsoft-Teams-Commercial?wid=406&hei=230&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Baixe gratuitamente o Microsoft Teams</h2>
+                        <p>Reuniões online, chat e armazenamento na nuvem compartilhado, tudo em um só lugar.</p>
+                        <a class='seis' href="https://www.microsoft.com/pt-br/microsoft-teams/group-chat-software?icid=mscom_marcom_CPW1a_MicrosoftTeams" style="font-weight:bold;">
+                            <span class="coisodoseis">Inscreva-se gratuitamente</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="noticia">
                     <img class="noticiaimg" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Microsoft-365-For-Business-Woman-Teams-Call?wid=406&hei=230&fit=crop" alt="" width="450">
                     <div class="noticiabody">
                         <h2>Experimente grátis o Microsoft 365</h2>
                         <p>Tenha o Microsoft Teams, armazenamento seguro na nuvem e aplicativos premium em todos os dispositivos com uma avaliação gratuita de 1 mês do Microsoft 365 Business Standard.</p>
-                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
-                            <span>Teste grátis, sem compromisso</span>
+                        <a class='seis' href="https://www.microsoft.com/pt-br/microsoft-365/business/compare-all-microsoft-365-business-products?icid=mscom_marcom_CPW2a_M365forBusiness&activetab=tab%3aprimaryr2" style="font-weight:bold;">
+                            <span class="coisodoseis">Teste grátis, sem compromisso</span>
+                            <span class="coisodoseis">
+                                >
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="noticia">
+                    <img class="noticiaimg" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Azure-AI-Bloom?wid=517&hei=293&fit=crop" alt="" width="450">
+                    <div class="noticiabody">
+                        <h2>Entre na era da IA</h2>
+                        <p>Crie, comunique e codifique com as soluções de IA da Microsoft.</p>
+                        <a class='seis' href="https://www.microsoft.com/pt-br/ai?icid=mscom_marcom_CPW3a_AzureAI" style="font-weight:bold;">
+                            <span class="coisodoseis">Explore as soluções de IA</span>
                             <span class="coisodoseis">
                                 >
                             </span>
@@ -377,8 +444,8 @@
                     <div class="noticiabody">
                         <h2>Windows 11 para empresas</h2>
                         <p>Projetado para o trabalho híbrido. Eficiente para os funcionários. Consistente para a TI. Seguro para todos.</p>
-                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
-                            <span>Saiba mais</span>
+                        <a class='seis' href="https://www.microsoft.com/pt-br/windows/business?icid=mscom_marcom_CPW4a_Windows11forBusiness" style="font-weight:bold;">
+                            <span class="coisodoseis">Saiba mais</span>
                             <span class="coisodoseis">
                                 >
                             </span>
@@ -386,33 +453,9 @@
                     </div>
                 </div>
                 
-                <div class="noticia">
-                    <img class="noticiaimg" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/JIC-DPS-CP01?wid=406&hei=230&fit=crop" alt="" width="450">
-                    <div class="noticiabody">
-                        <h2>Bem vindo ao PC na Nuvem do Windows 365</h2>
-                        <p>Transmita com segurança sua experiência do Windows da nuvem da Microsoft para qualquer dispositivo.</p>
-                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
-                            <span>Adquira hoje.</span>
-                            <span class="coisodoseis">
-                                >
-                            </span>
-                        </a>
-                    </div>
-                </div>
                 
-                <div class="noticia">
-                    <img class="noticiaimg"src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-CP-Microsoft-Teams-Commercial?wid=406&hei=230&fit=crop" alt="" width="450">
-                    <div class="noticiabody">
-                        <h2>Baixe gratuitamente o Microsoft Teams</h2>
-                        <p>Reuniões online, chat e armazenamento na nuvem compartilhado, tudo em um só lugar.</p>
-                        <a class='seis' href="https://www.youtube.com/watch?v=S_tMen8kJJQ" style="font-weight:bold;">
-                            <span>Inscreva-se gratuitamente</span>
-                            <span class="coisodoseis">
-                                >
-                            </span>
-                        </a>
-                    </div>
-                </div>
+                
+                
             </div>
 
             <div id="sociais">
@@ -477,30 +520,111 @@
                         <a class="peumlink" href="https://go.microsoft.com/fwlink/?linkid=2139749">Microsoft Teams para Educação</a>
                     </p>
                     <p>
-                        <a class="peumlink" href="https://go.microsoft.com/fwlink/p/?LinkID=824764&clcid=0x416">deu preguiça de colocar todos os links ent vai tudo repetido</a>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/education/buy-license/microsoft365">Microsoft 365 Education</a>
                     </p>
                     <p>
-                        <a class="peumlink" href="https://account.microsoft.com/orders">Microsoft 365 Education</a>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/education/products/office">Office Education</a>
                     </p>
                     <p>
-                        <a class="peumlink" href="https://account.microsoft.com/orders">Office Education</a>
+                        <a class="peumlink" href="https://education.microsoft.com/">Treinamento e desenvolvimento de educadores</a>
                     </p>
                     <p>
-                        <a class="peumlink" href="https://account.microsoft.com/orders">Treinamento e desenvolvimento de educadores</a>
+                        <a class="peumlink" href="https://www.microsoft.com/en-us/store/b/education">Ofertas para estudantes e pais</a>
                     </p>
                     <p>
-                        <a class="peumlink" href="https://account.microsoft.com/orders">Ofertas para estudantes e pais</a>
+                        <a class="peumlink" href="https://azure.microsoft.com/pt-br/free/students/">Azure para estudantes</a>
+                    </p>
+                </div>
+                <div class="peumcoiso">
+                    <p class="peumtitle">Negócios</p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/microsoft-cloud">Microsoft Cloud</a>
                     </p>
                     <p>
-                        <a class="peumlink" href="https://account.microsoft.com/orders">Azure para estudantes</a>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/security">Segurança da Microsoft</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://azure.microsoft.com/pt-br/">Azure</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://dynamics.microsoft.com/pt-br/">Dynamics 365</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/microsoft-365/business/">Microsoft 365</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://about.ads.microsoft.com/pt-br">Microsoft Advertising</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/industry">Microsoft Industry</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/microsoft-teams/group-chat-software">Microsoft Teams</a>
+                    </p>
+                </div>
+                <div class="peumcoiso">
+                    <p class="peumtitle">Desenvolvedor e TI</p>
+                    <p>
+                        <a class="peumlink" href="https://developer.microsoft.com/pt-br/">Centro do desenvolvedor</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://learn.microsoft.com/docs/">Documentação</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://learn.microsoft.com/">Microsoft Learn</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://techcommunity.microsoft.com/">Comunidade Microsoft Tech</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://azuremarketplace.microsoft.com/pt-br/">Azure Marketplace</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://appsource.microsoft.com/pt-br/">AppSource</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://powerplatform.microsoft.com/pt-br/">Microsoft Power Platform</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://visualstudio.microsoft.com/">Visual Studio</a>
+                    </p>
+                </div>
+                <div class="peumcoiso">
+                    <p class="peumtitle">Empresa</p>
+                    <p>
+                        <a class="peumlink" href="https://careers.microsoft.com/">Carreiras</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/about">Sobre a Microsoft</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://news.microsoft.com/pt-br">Notícias da empresa</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://privacy.microsoft.com/pt-br">Privacidade na Microsoft</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/investor/default.aspx">Investidores</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/en-us/diversity/default.aspx">Diversidade e inclusão</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/accessibility">Acessibilidade</a>
+                    </p>
+                    <p>
+                        <a class="peumlink" href="https://www.microsoft.com/pt-br/sustainability/">Sustentabilidade</a>
                     </p>
                 </div>
             </div>
-
             <div id="pedois">
-
-            </div>
-
+                <a href="https://support.microsoft.com/contactus" class="botaolegal pedoiscoiso">Entre em contato com a Microsoft</a>
+                <a href="https://go.microsoft.com/fwlink/?LinkId=521839" class="botaolegal pedoiscoiso">Privacidade</a>
+                <a href="https://www.microsoft.com/pt-br/legal/compliance" class="botaolegal pedoiscoiso">Ética e Compliance</a>
+                <a href="https://go.microsoft.com/fwlink/?LinkID=206977" class="botaolegal pedoiscoiso">Nota Legal</a>
+                <a href="https://go.microsoft.com/fwlink/?linkid=2196228" class="botaolegal pedoiscoiso">Marcas</a>
+                <a href="https://choice.microsoft.com/" class="botaolegal pedoiscoiso">Sobre os nossos anúncios</a>
+                <span class="pedoiscoiso">© Microsoft 2023</span>
         </content>
     </main>
 </body>
