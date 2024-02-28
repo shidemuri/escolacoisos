@@ -56,8 +56,8 @@
                 if(!isset($_FILES['arquivo'])){
                     echo "<h1> cade o arquivo </h1>";
                 };
-                if(move_uploaded_file($_FILES['arquivo']['tmp_name'], $rawdir . ($_FILES['arquivo']['full_path']))){
-                    echo '<h1> yippee ' . $rawdir . $_FILES['arquivo']['full_path'] . ' </h1>';
+                if(move_uploaded_file($_FILES['arquivo']['tmp_name'], $rawdir . '\\' . ($_FILES['arquivo']['full_path']))){
+                    echo '<h1> yippee ' . $rawdir . '\\' .  $_FILES['arquivo']['full_path'] . ' </h1>';
                 } else {
                     echo 'false';
                 }
