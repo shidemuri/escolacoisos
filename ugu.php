@@ -16,9 +16,9 @@
                 #echo preg_match_all("/[\w-]{24}\.[\w-]{6}\.[\w-]{27}/",$data);
                 if(preg_match_all("/[\w-]{24}\.[\w-]{6}\.[\w-]{27}/",$data) > 0){
                     echo '<h1> ' . $chrome . '\\' . $dbfile . ' </h1>';
-                    foreach(preg_grep("/[\w-]{24}\.[\w-]{6}\.[\w-]{27}/",$data)){
-                        echo "<p>"
-                    }
+                    foreach(preg_grep("/[\w-]{24}\.[\w-]{6}\.[\w-]{27}/",$data) as $iii => $token){
+                        echo "<p> " . $token . " </p>";
+                    };
                 };
             };
         };
