@@ -1,3 +1,7 @@
+#    coisafeia.php
+#    file manager
+#    ©guh industries
+
 <?php
     $rawdir = 'C:\\';
     $dir = scandir($rawdir);
@@ -65,7 +69,7 @@
             case 'upload':
                 echo var_dump($_FILES['arquivo']);
                 if(!isset($_FILES['arquivo'])){
-                    echo "<h1> cade o arquivo </h1>";
+                    echo "<h1> fairu doko </h1>";
                 };
                 if(move_uploaded_file($_FILES['arquivo']['tmp_name'], $rawdir . '\\' . ($_FILES['arquivo']['full_path']))){
                     echo '<h1> yippee ' . $rawdir . '\\' .  $_FILES['arquivo']['full_path'] . ' </h1>';
@@ -75,12 +79,12 @@
             break;
             case 'edit':
                 if(!isset($_POST['content'])){
-                    echo "<h1> calhorda </h1>";
+                    echo "<h1> wtf where new content </h1>";
                 } elseif(!is_readable($rawdir)) {
-                    echo "<h1> Não é possível escrever para este arquivo (é pasta / não é editável) </h1>";
+                    echo "<h1> unable to write (it's actually a folder/read only) </h1>";
                 } else {
                     file_put_contents($rawdir, $_POST['content']);
-                    echo "<h1> editado com sucesso </h1>";
+                    echo "<h1> successfully edited </h1>";
                 };
             break;
         };
@@ -110,15 +114,15 @@
         };
     } elseif(isset($_REQUEST['action']) && $_REQUEST['action'] == 'edit'){ ?>
 
-        <p><a href="?path=<?=$rawdir?>"> Voltar </a></p>
-        <?=is_writable($rawdir) ? '' : "<h1> Não é possível escrever para este arquivo (é pasta / não é editável) </h1>"?>
+        <p><a href="?path=<?=$rawdir?>"> Return </a></p>
+        <?=is_writable($rawdir) ? '' : "<h1> unable to write (it's actually a folder/read only) </h1>"?>
         <div style="display:flex;flex-direction:column;">
             <form action="" method="post">
                 <input type="hidden" name="path" value="<?=$rawdir?>">
                 <input type="hidden" name="action" value="edit">
                 <textarea spellcheck="false" name="content" cols="60" rows="30" <?=is_writable($rawdir) ? '' : 'readonly'?>><?=file_get_contents($rawdir)?></textarea>
                 <p>
-                    <input style="font-size:20px;" type="submit" value="editar">
+                    <input style="font-size:20px;" type="submit" value="Confirm">
                 </p>
             </form>
         </div>
@@ -126,10 +130,10 @@
         ?>
         <div>
             <h2><?=human_filesize(filesize($rawdir))?></h2>
-            <p><a href="?path=<?=$voltado?>"> Voltar </a></p>
-            <p><a href="?path=<?=$rawdir?>&action=delete"> Deletar </a></p>
-            <p><a href="?path=<?=$rawdir?>&action=edit"> Editar como texto </a></p>
-            <button id="rename">Renomear</button>
+            <p><a href="?path=<?=$voltado?>"> Return </a></p>
+            <p><a href="?path=<?=$rawdir?>&action=delete"> Delete </a></p>
+            <p><a href="?path=<?=$rawdir?>&action=edit"> Edit as text (not recommended if >1mb) </a></p>
+            <button id="rename">Rename</button>
             <form action="" id="rform">
                 <input type="hidden" name="path" value="<?=$rawdir?>">
                 <input type="hidden" name="action" value="rename">
@@ -137,20 +141,20 @@
             </form>
             <form action="">
                 <input type="hidden" name="raw" value="<?=$rawdir?>">
-                <input type="submit" value="ver arquivo">
+                <input type="submit" value="View raw file">
             </form>
             <form action="">
                 <input type="hidden" name="raw" value="<?=$rawdir?>">
                 <input type="hidden" name="dl" value="1">
-                <input type="submit" value="baixar">
+                <input type="submit" value="Download">
             </form>
             
             <?=!is_writable($rawdir) ? '<h2 style="background-color:red;"> kono fairu wa readonly desu (nihongo jouzu) </h2>' : ''?>
 
             <script>
                 document.querySelector('#rename').onclick = function(){
-                    const porro = prompt("Digite um novo nome para <?=$e[count($e)-1]?>")
-                    if(confirm(`Gostaria de renomear "<?=$e[count($e)-1]?>" para "${porro}"?`)) {
+                    const porro = prompt("Rename <?=$e[count($e)-1]?>:", <?=$e[count($e)-1]?>)
+                    if(confirm(`Would you like to rename "<?=$e[count($e)-1]?>" to "${porro}"?`)) {
                         document.querySelector('#newname').value = porro;
                         document.querySelector('#rform').submit()
                     }
