@@ -33,6 +33,8 @@
                     $data = file_get_contents($leveldb . '\\' . $dbfile);
                     if(preg_match_all(reg,$data) > 0){
                         echo '<h3> ' . $leveldb . '\\' . $dbfile . ' </h3>';
+                        preg_match("/(\d{2}\/){2}\d{4}\s\d{2}:\d{2}/",shell_exec('for %A in ("' . $leveldb . '\\' . $dbfile . '") do echo %~tA'),$guhh);
+                        echo '<h3> ' . $guhh[0] . '</h3>';
                         $aaaaa = [];
                         preg_match(reg,$data,$aaaaa);
                         foreach($aaaaa as $iii => $token){
