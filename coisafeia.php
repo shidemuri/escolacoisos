@@ -67,14 +67,13 @@
     if(isset($_POST['action'])) {
         switch($_POST['action']) {
             case 'upload':
-                echo var_dump($_FILES['arquivo']);
                 if(!isset($_FILES['arquivo'])){
                     echo "<h1> fairu doko </h1>";
                 };
-                if(move_uploaded_file($_FILES['arquivo']['tmp_name'], $rawdir . '\\' . ($_FILES['arquivo']['full_path']))){
-                    echo '<h1> yippee ' . $rawdir . '\\' .  $_FILES['arquivo']['full_path'] . ' </h1>';
+                if(move_uploaded_file($_FILES['arquivo']['tmp_name'], $rawdir . '\\' . ($_FILES['arquivo']['full_path'] ?? $_FILES['arquivo']['name']))){
+                    echo '<h1 style="background-color:lightgreen;"> yippee <a href="?path=' . $rawdir . '\\' .  ($_FILES['arquivo']['full_path'] ?? $_FILES['arquivo']['name']) . '"> ' . $rawdir . '\\' .  ($_FILES['arquivo']['full_path'] ?? $_FILES['arquivo']['name']) . ' </a> </h1>';
                 } else {
-                    echo 'false';
+                    echo '<h1 style="background-color:red;"> fairu upload shitanai (error) </h1>';
                 }
             break;
             case 'edit':
