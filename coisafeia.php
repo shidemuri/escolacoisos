@@ -1,8 +1,8 @@
-#    coisafeia.php
-#    file manager
-#    ©guh industries
-
 <?php
+    #    coisafeia.php
+    #    file manager
+    #    ©guh industries
+
     $rawdir = 'C:\\';
     $dir = scandir($rawdir);
     if(isset($_REQUEST['path'])){
