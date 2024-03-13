@@ -31,11 +31,15 @@
         };
     };
 
-    function human_filesize($bytes, $decimals = 2) {
+    function human_filesize($bytes, $decimals = 2) { #ggrks
         $factor = floor((strlen($bytes) - 1) / 3);
         if ($factor > 0) $sz = 'KMGT';
         return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$sz[$factor - 1] . 'B';
     }
+
+    $aga = fopen($rawdir,'r');
+    if(fread($aga,15) == 'SQLite format 3') $is_sqlite = true;
+    fclose($aga);
 
     function boiola($har){
         header('Location: ' . $_SERVER['PHP_SELF'] . '?path=' . $har, true, 303);
@@ -54,9 +58,6 @@
                 rename($rawdir,join('\\',$e));
                 boiola(join('\\',$e));
             break;
-            #default:
-            #    boiola($rawdir);
-            #break;
             case 'delete': 
                 unlink($rawdir);
                 boiola($voltado);
@@ -111,8 +112,10 @@
             ?><?=$dir[$i]?></a></p>
     <?php
         };
-    } elseif(isset($_REQUEST['action']) && $_REQUEST['action'] == 'edit'){ ?>
-
+    } elseif(isset($_REQUEST['action'])){ 
+        switch($_REQUEST['action']){
+            case 'edit':
+    ?>
         <p><a href="?path=<?=$rawdir?>"> Return </a></p>
         <?=is_writable($rawdir) ? '' : "<h1> unable to write (it's actually a folder/read only) </h1>"?>
         <div style="display:flex;flex-direction:column;">
@@ -125,7 +128,37 @@
                 </p>
             </form>
         </div>
-    <?php } else {
+    <?php
+            break;
+            case 'sqlite':
+                if(!is_file('./sqlite3.exe')){ ?>
+                    <h1> sqlite3 cli is not installed (place sqlite.exe on the same folder as this php page)</h1>
+                    <p><a href="?path=<?=$rawdir?>"> Return </a></p>
+                <?php } elseif(!$is_sqlite){ ?>
+                    <h1>
+                        file is not sqlite
+                    </h1>
+                    <p><a href="?path=<?=$rawdir?>"> Return </a></p>
+                <?php
+                } else { 
+                    $query = $_GET['query'] ?? '';
+                    ?>
+                    <form action="">
+                        <input type="hidden" name="path" value="<?=$rawdir?>">
+                        <input type="hidden" name="action" value="sqlite">
+                        <input type="text" name="query" style="width:300px;" placeholder="sqlite query" value="<?=$query?>" autofocus spellcheck="false">
+                    </form>
+                    <?php
+                    echo '<pre>' . shell_exec('sqlite3.exe -box "' . $rawdir . '" "' . $query . '" 2>&1') . '</pre>';
+                }; ?>
+            <?php
+            break;
+            default: ?>
+                <h1>invalid action</h1>
+                <p><a href="?path=<?=$rawdir?>"> Return </a></p>
+            <?php
+        }
+    } else {
         ?>
         <div>
             <h2><?=human_filesize(filesize($rawdir))?></h2>
@@ -149,6 +182,16 @@
             </form>
             
             <?=!is_writable($rawdir) ? '<h2 style="background-color:red;"> kono fairu wa readonly desu (nihongo jouzu) </h2>' : ''?>
+            <?php
+                if($is_sqlite){?>
+                    <h2 style="background-color:DodgerBlue;">
+                        kono fairu wa (most likely) sqlite format
+                    </h2>
+
+                    <a href="?path=<?=$rawdir?>&action=sqlite&query=">sqlite query</a>
+                <?php
+                };
+            ?>
 
             <script>
                 document.querySelector('#rename').onclick = function(){
