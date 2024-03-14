@@ -6,7 +6,7 @@
     $rawdir = 'C:\\';
     $dir = scandir($rawdir);
     if(isset($_REQUEST['path'])){
-        $rawdir = str_replace("\ ","%20",realpath($_GET['path']) ? realpath($_GET['path']) : $_GET['path']);
+        $rawdir = str_replace("%20","\ ",realpath($_GET['path']) ? realpath($_GET['path']) : $_GET['path']);
         if(is_dir($_GET['path'])) {
             $dir = scandir($rawdir);
         } else {
@@ -36,10 +36,14 @@
         if ($factor > 0) $sz = 'KMGT';
         return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$sz[$factor - 1] . 'B';
     }
+    $is_sqlite = false;
 
-    $aga = fopen($rawdir,'r');
-    if(fread($aga,15) == 'SQLite format 3') $is_sqlite = true;
-    fclose($aga);
+    if(is_file($rawdir)){
+        $aga = fopen($rawdir,'r');
+        if(fread($aga,15) == 'SQLite format 3') $is_sqlite = true;
+        fclose($aga);
+    };
+
 
     function boiola($har){
         header('Location: ' . $_SERVER['PHP_SELF'] . '?path=' . $har, true, 303);
@@ -79,20 +83,17 @@
             break;
             case 'edit':
                 if(!isset($_POST['content'])){
-                    echo "<h1> wtf where new content </h1>";
+                    echo '<h1 style="background-color:red;"> wtf where new content </h1>';
                 } elseif(!is_readable($rawdir)) {
-                    echo "<h1> unable to write (it's actually a folder/read only) </h1>";
+                    echo '<h1 style="background-color:red;"> unable to write (its actually a folder/read only) </h1>';
                 } else {
                     file_put_contents($rawdir, $_POST['content']);
-                    echo "<h1> successfully edited </h1>";
+                    echo '<h1 style="background-color:lightgreen;"> successfully edited </h1>';
                 };
             break;
         };
     };
     
-
-    
-    #echo var_dump($_SERVER);
     echo '<h3>' . $rawdir . '</h3>';
     echo '<style> *{font-size:18px} </style>';
     if(is_dir($rawdir)) {?>
@@ -114,20 +115,34 @@
         };
     } elseif(isset($_REQUEST['action'])){ 
         switch($_REQUEST['action']){
-            case 'edit':
-    ?>
+            case 'edit': ?>
         <p><a href="?path=<?=$rawdir?>"> Return </a></p>
-        <?=is_writable($rawdir) ? '' : "<h1> unable to write (it's actually a folder/read only) </h1>"?>
-        <div style="display:flex;flex-direction:column;">
-            <form action="" method="post">
-                <input type="hidden" name="path" value="<?=$rawdir?>">
-                <input type="hidden" name="action" value="edit">
-                <textarea spellcheck="false" name="content" cols="60" rows="30" <?=is_writable($rawdir) ? '' : 'readonly'?>><?=file_get_contents($rawdir)?></textarea>
-                <p>
-                    <input style="font-size:20px;" type="submit" value="Confirm">
-                </p>
-            </form>
-        </div>
+        <?php 
+            if(is_dir($rawdir)) { ?>
+                <h2 style="background-color:red;">not a file (its a folder)</h2>
+            <?php } else { ?>
+                <h2 style="background-color:red;"> <?=!is_readable($rawdir) ? 'kono fairu wa NOT READABLE desu nihonfo jouzu (are you sure its not a folder)' : ''?></h2>
+                <h2 style="background-color:red;"> <?=!is_writable($rawdir) ? 'kono fairu wa NOT WRITABLE desu (nihongo jjouzu) (are you sure its not a folder)' : ''?></h2>
+                <div style="display:flex;flex-direction:column;">
+                    <form action="" method="post">
+                        <input type="hidden" name="path" value="<?=$rawdir?>">
+                        <input type="hidden" name="action" value="edit">
+                        <?php
+                            if(is_readable($rawdir)){
+                                if(filesize($rawdir) > 2097152) { ?>
+                                    <h2 style="background-color:red;">kono fairu wa OOKI desu (nihongo ) (>2mb, wont read)</h2>
+                                <?php } else { ?>
+                                    <textarea spellcheck="false" name="content" cols="60" rows="30" <?=is_writable($rawdir) ? '' : 'readonly'?>><?=file_get_contents($rawdir)?></textarea>
+                                    <p>
+                                        <input style="font-size:20px;" type="submit" value="Confirm">
+                                    </p>
+                                <?php }
+                            }
+                        ?>
+                    </form>
+                </div>
+            <?php }
+        ?>
     <?php
             break;
             case 'sqlite':
@@ -143,10 +158,16 @@
                 } else { 
                     $query = $_GET['query'] ?? '';
                     ?>
+                    <p><a href="?path=<?=$rawdir?>"> Return </a></p>
                     <form action="">
                         <input type="hidden" name="path" value="<?=$rawdir?>">
                         <input type="hidden" name="action" value="sqlite">
-                        <input type="text" name="query" style="width:300px;" placeholder="sqlite query" value="<?=$query?>" autofocus spellcheck="false">
+                        <input id="g" type="text" name="query" style="width:300px;" placeholder="sqlite3 cli cmd" value="<?=$query?>" spellcheck="false">
+                        <script>
+                            const o = document.querySelector('#g');
+                            o.focus();
+                            o.select();
+                        </script>
                     </form>
                     <?php
                     echo '<pre>' . shell_exec('sqlite3.exe -box "' . $rawdir . '" "' . $query . '" 2>&1') . '</pre>';
@@ -161,7 +182,7 @@
     } else {
         ?>
         <div>
-            <h2><?=human_filesize(filesize($rawdir))?></h2>
+            <h2><?=is_readable($rawdir) ? human_filesize(filesize($rawdir)) : '??????' ?></h2>
             <p><a href="?path=<?=$voltado?>"> Return </a></p>
             <p><a href="?path=<?=$rawdir?>&action=delete"> Delete </a></p>
             <p><a href="?path=<?=$rawdir?>&action=edit"> Edit as text (not recommended if >1mb) </a></p>
@@ -180,15 +201,14 @@
                 <input type="hidden" name="dl" value="1">
                 <input type="submit" value="Download">
             </form>
-            
-            <?=!is_writable($rawdir) ? '<h2 style="background-color:red;"> kono fairu wa readonly desu (nihongo jouzu) </h2>' : ''?>
+            <h2 style="background-color:red;"> <?=!is_readable($rawdir) ? 'kono fairu wa NOT READABLE desu nihonfo jouzu (are you sure its not a folder)' : ''?></h2>
+            <h2 style="background-color:red;"> <?=!is_writable($rawdir) ? 'kono fairu wa NOT WRITABLE desu (nihongo jjouzu) (are you sure its not a folder)' : ''?></h2>
             <?php
                 if($is_sqlite){?>
                     <h2 style="background-color:DodgerBlue;">
-                        kono fairu wa (most likely) sqlite format
+                        kono fairu wa (most likely) sqlite format (aaaaaaaaaaaaaaaaaaaaaaaaaaaa)
                     </h2>
-
-                    <a href="?path=<?=$rawdir?>&action=sqlite&query=">sqlite query</a>
+                    <a href="?path=<?=$rawdir?>&action=sqlite&query=.dump"> sqlite query</a>
                 <?php
                 };
             ?>
