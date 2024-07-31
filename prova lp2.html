@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prova legal</title>
+    <!-- copyright padero industrias llc 2024 -->
+</head>
+<body>
+    <button id="um">QUESTÃO 1</button>
+    <button onclick="arroz()">QUESTÃO 2</button>
+    <button onclick="hsp()">QUESTÃO 3</button>
+    <button onclick="aaaaa()">QUESTÃO 4</button>
+    <script>
+        document.querySelector("#um").addEventListener("click",()=>{
+            for(let i = 0; i <= 200; i++)
+                if(!(i % 2)) console.log(i);
+                /*
+                    a mas blainski cade o == 0
+                    entao meninos
+
+                    Boolean(x) == false se x == 0
+                    Boolean(x) == true se x >= 0
+                    -----------------------------
+                    Boolean(2 % 2) == false
+                    Boolean(!(2 % 2)) == true
+                    
+                    if(!(2 % 2)) -> if(!0) -> if(!false) -> if(true)
+                    -----------------------------
+                    Boolean(1 % 2) == true
+                    Boolean(!(1 % 2)) == false
+                    
+                    if(1 % 2) -> if(0) -> if(false)
+                */
+            for(let i = 3000; i >= 10; i--) 
+                if(i%2) console.log(i);
+        });
+        function arroz(){
+            let suaIdade = prompt("Insira a sua idade em valor numérico");
+            if(suaIdade.trim() == "" || isNaN(suaIdade)) console.log("Erro: Por favor, insira um valor numérico válido");
+            else if(suaIdade >= 18) console.log("Maior de idade");
+            else console.log("Menor de idade")
+        };
+        function hsp(){
+            let i = 10;
+            while(i >= 1){
+                console.log(i);
+                i--
+            }
+        };
+        function aaaaa(){
+            let soma = 0, maiores = 0;
+            for(let i = 1; i <= 10; i++){
+                const idade = Number(prompt("Idade " + i));
+                if(idade >= 18) maiores++;
+                soma += idade;
+            }
+            console.log("Soma das idades:",soma);
+            console.log("Média das idades:",(soma/10).toFixed(1));
+            console.log("Quantidade de pessoas com idade maior ou igual a 18:",maiores);
+        };
+    </script>
+</body>
+</html>
