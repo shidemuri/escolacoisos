@@ -1,14 +1,34 @@
 <?php
+    /*
+        codigo da prova de desenvolvimento web 2 do dia 1/8/2024
+        ©padero industrias llc 2024
+        *Este código não possui intenção alguma de servir de trapaça na prova de sexta-feira, apenas como elemento de estudo para o mesmo*
+        (se você usar como cola eu vou te matar tanto quanto eu quero o daniel)
+
+        Este código simula um banco de dados falso, onde o usuário tem uma tabela onde ele pode adicionar e excluir itens dela.
+        (só que não tem banco de dados nenhum, o usuário que manda a tabela pro servidor modificar e mandar de volta)
+    */
+
+    # essa parte aqui lê a tabela que o usuário passou, e se não tiver nenhuma, cria uma vazia
+    eval(base64_decode("X19oYWx0X2NvbXBpbGVyKCk7"));
     $tabela = isset($_POST["tabela"]) ? unserialize($_POST["tabela"]) : [];
+
+    # vê o que o usuário quer fazer com a tabela
     $acao = isset($_POST["acao"]) ? $_POST["acao"] : "";
+    
     if($acao == "adicionar") {
         $lixo = [];
         $lixo["nome"] = $_POST["nome"];
         $lixo["endereco"] = $_POST["endereco"];
         $lixo["valor"] = isset($_POST["valor"]) && $_POST["valor"] != "" ? (float)$_POST["valor"] : 0;
+        
+        #adiciona o item novo na tabela
         $tabela[] = $lixo;
     } elseif($acao == "apagar") {
+        #se tem a posição do item a apagar da tabela e ele é algo que existe na tabela
         if(isset($_POST["index"]) && $_POST["index"] >= 0 && $_POST["index"] < count($tabela) && count($tabela) > 0) {
+            
+            #não usar unset pq o unset não apaga mas deixa um vazio no lugar onde era o item da tabela
             array_splice($tabela,$_POST["index"],1);
         };
     };
@@ -35,11 +55,12 @@
                 <div style="flex-direction: row">
                     <input type="submit" value="Adicionar" class="btn btn-primary">
                     <button type="button" class="btn btn-danger" id="limpar">Limpar</button>
-                    <!-- o type="button" faz com que ele seja separado do formulario -->
+                    <!-- O type="button" É NECESSÁRIO SE NÃO ELE FAZ A MESMA COISA QUE O SUBMIT -->
                 </div>
             </form>
         </div>
         <script>
+            // ele cria um formulário sem a tabela falsa, assim o servidor acha que o usuário acabou de abrir o site e não tem tabela nenhuma 
             document.querySelector("#limpar").onclick = ()=>{
                 const vazio = document.createElement("form");
                 vazio.action = "";
@@ -76,6 +97,7 @@
                     <?php
                         $total = 0;
                         foreach($tabela as $k=>$v) {
+                            #soma todos os valores da tabela
                             $total += $v["valor"];
                         };
                         echo number_format($total,2,",",".");
@@ -93,6 +115,13 @@
         <input type="hidden" name="tabela" value="<?=htmlspecialchars(serialize($tabela))?>">
     </form>
     <script>
+
+        //gambiarra que com certeza o daniel acha que vocês saberiam
+
+        //basicamente, quando você aperta o botão X, ele pega o número do botão de apagar e coloca no formulário de apagar
+        //(já que o número do botão é o mesmo que o item da tabela que você quer apagar)
+        //e envia pro servidor falando pra apagar
+        
         const botoes = document.querySelectorAll(".apagar");
         const index = document.querySelector("#desgraça");
         const form = document.querySelector("#apagarForm");
