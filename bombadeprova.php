@@ -10,7 +10,7 @@
     */
 
     # essa parte aqui lê a tabela que o usuário passou, e se não tiver nenhuma, cria uma vazia
-    eval(base64_decode("X19oYWx0X2NvbXBpbGVyKCk7"));
+
     $tabela = isset($_POST["tabela"]) ? unserialize($_POST["tabela"]) : [];
 
     # vê o que o usuário quer fazer com a tabela
